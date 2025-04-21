@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clic Estratégico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #0D2339;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #FE6812;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        header:hover {
+            background-color: #0D2339; /* Cambiado a azul */
+        }
+
+        header img {
+            height: 150px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 5%;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .section {
+            padding: 50px 5%;
+        }
+
+        .section h2 {
+            color: #FE6812;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .mission, .vision {
+            background-color: #f0f0f0; /* Fondo claro */
+            border: 2px solid #FE6812; /* Borde con color corporativo */
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%; /* Ajustar el ancho de los cuadros */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .mission:hover, .vision:hover {
+            transform: scale(1.05);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: #FE6812;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        .card button {
+            background-color: #FE6812;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #DD2339;
+            transform: translateY(-2px);
+        }
+
+footer {
+    background-color: #0D2339;
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+#whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+}
+
+#whatsapp img {
+    width: 30px;
+    height: 30px;
+}
+
+img.section-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+img.section-image:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mission, .vision {
+        width: 100%; /* Ajustar a 100% en pantallas pequeñas */
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .card button {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+<img src="Logo.png" alt="Clic Estratégico Logo">
+<nav>
+    <a href="#about">¿Quiénes Somos?</a>
+    <a href="#mission">Misión y Visión</a>
+    <a href="#values">Valores</a>
+    <a href="#plans">Planes</a>
+    <a href="#testimonials">Testimonios</a>
+</nav>
+</header>
+
+<div class="hero">
+<h2>Impulsa tu presencia digital</h2>
+<p>Ofrecemos soluciones rápidas, efectivas y accesibles para transformar tu negocio.</p>
+</div>
+
+<section id="about" class="section">
+<h2>¿Quiénes Somos?</h2>
+<p>En Clic Estratégico somos una agencia de marketing digital dedicada a potenciar el crecimiento empresarial mediante estrategias personalizadas.</p>
+<img class="section-image" src="equipo trabajando .jpg" alt="Equipo trabajando">
+</section>
+
+<section id="mission" class="section">
+<h2>Misión y Visión</h2>
+<div class="mission-vision">
+    <div class="mission">
+        <h3>Misión</h3>
+        <p>Proveer soluciones innovadoras y personalizadas de marketing digital que permitan a las empresas maximizar su crecimiento y consolidar su presencia en el ámbito digital. En Clic Estratégico, nuestra misión es ser un socio estratégico para nuestros clientes, trabajando con dedicación y profesionalismo para garantizar resultados medibles que impulsen el desarrollo empresarial y social
+            .</p>
+            </div>
+            <div class="vision">
+                <h3>Visión</h3>
+                <p>Ser reconocidos como la agencia de marketing digital líder en Bolivia, destacándonos por nuestra capacidad de ofrecer soluciones ágiles y efectivas en un entorno dinámico. Aspiramos a expandir nuestro alcance a nivel nacional e internacional, contribuyendo al éxito de empresas de todos los tamaños y sectores, mientras lideramos el cambio hacia una cultura digital más inclusiva y sostenible.</p>
+            </div>
+        </div>
+        <img class="section-image" src="estrategia digital.jpg" alt="Estrategia digital">
+    </section>
+
+    <section id="values" class="section">
+        <h2>Valores Corporativos</h2>
+        <ul>
+            <li>Rapidez y excelencia</li>
+            <li>Innovación constante</li>
+            <li>Empatía y enfoque humano</li>
+            <li>Accesibilidad y equidad</li>
+            <li>Ética profesional</li>
+            <li>Compromiso con el aprendizaje</li>
+        </ul>
+        <img class="section-image" src="valores empresariales.png" alt="Valores empresariales">
+    </section>
+
+    <section id="plans" class="section">
+        <h2>Nuestros Planes</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="plan basico.jpg" alt="Plan Básico">
+                <h3>Paquete Básico</h3>
+                <p>Creación de redes sociales, identidad visual básica, 3 publicaciones semanales y más.</p>
+                <p><strong>Precio:</strong> 1800 Bs / 264 USD</p>
+                <button onclick="window.location.href='https://wa.me/77954678';">Adquirir por WhatsApp</button>
+            </div>
+            <div class="card">
+                <img src="plan intermedio.jpg" alt="Plan Intermedio">
+                <h3>Paquete Intermedio</h3>
+                <p>Creación de página web informativa, manejo de redes sociales, y más.</p>
+                <p><strong>Precio:</strong> 3360 Bs / 492 USD</p>
+                <button onclick="window.location.href='https://wa.me/77954678';">Adquirir por WhatsApp</button>
+            </div>
+            <div class="card">
+                <img src="plan premium.jpg" alt="Plan Premium">
+                <h3>Paquete Premium</h3>
+                <p>Página web profesional, branding completo, manejo avanzado de redes sociales y más.</p>
+                <p><strong>Precio:</strong> 5400 Bs / 792 USD</p>
+                <button onclick="window.location.href='https://wa.me/77954678';">Adquirir por WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <h2>Testimonios</h2>
+        <p>"Clic Estratégico transformó nuestra estrategia digital y triplicamos nuestras ventas en solo 6 meses."</p>
+        <p>"El equipo es increíblemente profesional y eficiente. ¡100% recomendados!"</p>
+        <img class="section-image" src="testimonios.jpg" alt="Clientes satisfechos">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clic Estratégico. Todos los derechos reservados.</p>
+    </footer>
+
+    <a id="whatsapp" href="https://wa.me/77954678" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</body>
+</html>
